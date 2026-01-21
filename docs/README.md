@@ -26,9 +26,7 @@ Clone environment in pixi.toml with
 pixi install
 
 ```
-or 
-
-Install via:
+or install via:
 ```bash
 pip install cbfs
 
