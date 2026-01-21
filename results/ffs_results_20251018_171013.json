@@ -1,0 +1,22 @@
+{
+  "1": {
+    "selected_features": "[ 9 15 16  7]",
+    "run_id": 1
+  },
+  "2": {
+    "selected_features": "[ 4 12 17 19]",
+    "run_id": 2
+  },
+  "3": {
+    "selected_features": "[ 4 17 19]",
+    "run_id": 3
+  },
+  "4": {
+    "selected_features": "[ 4 10 15 17 18 11  0  9]",
+    "run_id": 4
+  },
+  "5": {
+    "selected_features": "[ 7  9 11 15  6 17]",
+    "run_id": 5
+  }
+}
