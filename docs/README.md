@@ -21,25 +21,28 @@
 
 ### Prerequisites
 
-1. Check requirements.txt or clone environment in pixi.toml with 
-2. Install via:
+Clone environment in pixi.toml with 
+```bash
+pixi install
+
+```
+or 
+
+Install via:
 ```bash
 pip install cbfs
 
 ```
 
-
 ### Usage
-
-
 
 ```python
 from cbfs import ffs
 
 
-data_path = "your_path.h5ad" #.csv
+data_path = "your_path.h5ad" # .csv are also supported
 target_column =  "target-column-name"
-run_id= 0 # equivalent to random seed
+run_id= 0 # equivalent to random seed (int)
 
 ffs_instance = ffs.FloatingFeatureSelector(run_id=run_id, data_path=data_path, target_column=target_column)
 experiment_result = ffs_instance.run_ffs(n_feat=10)
