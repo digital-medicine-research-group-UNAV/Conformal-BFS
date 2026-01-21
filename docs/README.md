@@ -9,8 +9,7 @@
 --------------------------------------
 
 [![pixi-badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json&style=flat-square)](https://github.com/prefix-dev/pixi)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json&style=flat-square)](https://github.com/astral-sh/ruff)
-[![Built with Material for MkDocs](https://img.shields.io/badge/mkdocs--material-gray?logo=materialformkdocs&style=flat-square)](https://github.com/squidfunk/mkdocs-material)
+
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/bhklab/conformal-ffs?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/bhklab/conformal-ffs?style=flat-square)
@@ -22,16 +21,50 @@
 
 ### Prerequisites
 
+1. Check requirements.txt or clone environment in pixi.toml with 
+2. Install via:
+```bash
 pip install cbfs
 
-### Installation
-
-1. Use  from cbfs import ffs
-
-
-```bash
-pixi install
 ```
+
+
+### Usage
+
+
+
+```python
+from cbfs import ffs
+
+
+data_path = "your_path.h5ad" #.csv
+target_column =  "target-column-name"
+run_id= 0 # equivalent to random seed
+
+ffs_instance = ffs.FloatingFeatureSelector(run_id=run_id, data_path=data_path, target_column=target_column)
+experiment_result = ffs_instance.run_ffs(n_feat=10)
+
+
+print("Experiment completed successfully!")
+
+print("Selected features:", experiment_result)
+
+coverage = ffs_instance.Empirical_coverage_
+uncertainty = ffs_instance.Uncertainty_
+certainty = ffs_instance.Certainty_
+
+print(f"Empirical coverage: {coverage}")
+print(f"Uncertainty: {uncertainty}")
+print(f"Certainty: {certainty}")
+
+all_results[run_id] = {"selected_features": experiment_result, "run_id": run_id, "empirical_coverage": coverage,
+                    "uncertainty": uncertainty, "certainty": certainty}
+
+
+```
+
+
+
 
 <!-- ## Documentation
 

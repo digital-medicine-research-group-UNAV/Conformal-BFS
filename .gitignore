@@ -412,3 +412,7 @@ src/__pycache__
 dist/
 src/*.egg-info
 
+pixi.lock 
+
+prueba.py
+.pixi/
